@@ -1,5 +1,8 @@
 {
   "name": "vscode-toggle-debug-options-by-cmake",
+  "author": "SR_team",
+  "publisher": "sr-team",
+  "license": "MIT",
   "displayName": "Toggle debug configurations by CMake Tools",
   "description": "Toggle debug configurations based on CMake preset or kit",
   "version": "0.0.1",
