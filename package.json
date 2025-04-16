@@ -1,0 +1,85 @@
+{
+  "name": "vscode-toggle-debug-options-by-cmake",
+  "displayName": "Toggle debug configurations by CMake Tools",
+  "description": "Toggle debug configurations based on CMake preset or kit",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sr-tream/vscode-toggle-debug-options-by-cmake.git"
+  },
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cmake.activeFolderName",
+    "onCommand:cmake.activeFolderPath",
+    "onCommand:cmake.activeConfigurePresetName",
+    "onCommand:cmake.activeBuildPresetName",
+    "onCommand:cmake.activeTestPresetName",
+    "onCommand:cmake.activePackagePresetName",
+    "onCommand:cmake.activeWorkflowPresetName",
+    "onCommand:cmake.buildTargetName",
+    "onCommand:cmake.launchTargetPath",
+    "onCommand:cmake.launchTargetDirectory",
+    "onCommand:cmake.launchTargetFilename",
+    "onCommand:cmake.launchTargetName",
+    "onCommand:cmake.getLaunchTargetPath",
+    "onCommand:cmake.getLaunchTargetDirectory",
+    "onCommand:cmake.getLaunchTargetFilename",
+    "onCommand:cmake.getlaunchTargetName",
+    "onCommand:cmake.buildType",
+    "onCommand:cmake.buildDirectory",
+    "onCommand:cmake.executableTargets",
+    "onCommand:cmake.buildKit",
+    "onCommand:cmake.tasksBuildCommand",
+    "onDebugResolve:cmake",
+    "onDebugInitialConfigurations",
+    "onDebugDynamicConfigurations:cmake",
+    "workspaceContains:CMakeLists.txt",
+    "workspaceContains:*/CMakeLists.txt",
+    "workspaceContains:*/*/CMakeLists.txt",
+    "workspaceContains:*/*/*/CMakeLists.txt",
+    "workspaceContains:.vscode/cmake-kits.json",
+    "onFileSystem:cmake-tools-schema",
+    "onLanguage:cmake",
+    "onLanguage:cmake-cache"
+  ],
+  "extensionDependencies": [
+    "ms-vscode.cmake-tools"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-toggle-debug-options-by-cmake.refreshDebugConfigs",
+        "title": "Refresh Debug Configurations based on CMake Selection"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "vscode-cmake-tools": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.63.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  }
+}
